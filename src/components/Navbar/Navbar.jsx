@@ -23,7 +23,7 @@ export const Navbar = () => {
     <header className="heading d-flex  align-center main">
       <h1 className="heading-1">
         <a className="link" href="/">
-          Page Title
+          Hotel Booking
         </a>
       </h1>
       <div

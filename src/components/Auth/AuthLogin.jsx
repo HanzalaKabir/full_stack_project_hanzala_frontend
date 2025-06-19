@@ -57,24 +57,38 @@ export const AuthLogin = () => {
   };
 
   const handleTestCredentialsClick = async () => {
-    const { accessToken, username } = await loginHandler(
-      7878787878,
-      "Abcd@123"
-    );
-    authDispatch({
-      type: "SET_ACCESS_TOKEN",
-      payload: accessToken,
-    });
-    authDispatch({
-      type: "SET_USERNAME_TOKEN",
-      payload: username,
-    });
-    authDispatch({
-      type: "SHOW_AUTH_MODAL",
-    });
-    authDispatch({
-      type: "CLEAR_USER_DATA",
-    });
+    try {
+      console.log("Attempting test credentials login...");
+      const { accessToken, username } = await loginHandler(
+        7878787878,
+        "Abcd@123"
+      );
+      console.log("Test credentials login response:", {
+        accessToken,
+        username,
+      });
+      if (!accessToken) {
+        alert("Login failed: No access token received. Check backend.");
+        return;
+      }
+      authDispatch({
+        type: "SET_ACCESS_TOKEN",
+        payload: accessToken,
+      });
+      authDispatch({
+        type: "SET_USERNAME_TOKEN",
+        payload: username,
+      });
+      authDispatch({
+        type: "SHOW_AUTH_MODAL",
+      });
+      authDispatch({
+        type: "CLEAR_USER_DATA",
+      });
+    } catch (error) {
+      console.error("Test credentials login error:", error);
+      alert("Test credentials login failed. See console for details.");
+    }
   };
 
   return (

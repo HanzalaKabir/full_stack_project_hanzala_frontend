@@ -55,10 +55,9 @@ export const FinalPrice = ({ singleHotel }) => {
           />
         </div>
       </div>
-      {checkinDate && checkoutDate && guests > 0 ? (
+      {/* Show warning if any field is missing */}
+      {!(checkinDate && checkoutDate && guests > 0) && (
         <span>Check all fields are filled correctly</span>
-      ) : (
-        <></>
       )}
       <div>
         <button
