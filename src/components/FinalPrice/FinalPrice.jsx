@@ -55,6 +55,11 @@ export const FinalPrice = ({ singleHotel }) => {
           />
         </div>
       </div>
+      {checkinDate && checkoutDate && guests > 0 ? (
+        <span>Check all fields are filled correctly</span>
+      ) : (
+        <></>
+      )}
       <div>
         <button
           className="button btn-reserve btn-primary cursor "

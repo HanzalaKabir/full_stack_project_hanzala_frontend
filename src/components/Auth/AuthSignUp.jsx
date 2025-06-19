@@ -171,6 +171,12 @@ export const AuthSignUp = () => {
             Submit
           </button>
         </div>
+        <div>
+          <span color={red}>
+            Password must be 8 character, with special, lower and uppercase
+            characters and number
+          </span>
+        </div>
       </form>
     </div>
   );
