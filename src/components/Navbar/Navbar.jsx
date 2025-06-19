@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import { useDate, useAuth } from "../../context";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const { destination, checkinDate, checkoutDate, guests, dateDispatch } =
@@ -42,9 +43,9 @@ export const Navbar = () => {
   return (
     <header className="heading d-flex  align-center main">
       <h1 className="heading-1">
-        <a className="link" href="/">
+        <Link className="link" to="/">
           Hotel Booking
-        </a>
+        </Link>
       </h1>
       <div
         className="form-container d-flex align-center cursor-pointer shadow"
