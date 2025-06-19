@@ -172,7 +172,7 @@ export const AuthSignUp = () => {
           </button>
         </div>
         <div>
-          <span color={red}>
+          <span color="red">
             Password must be 8 character, with special, lower and uppercase
             characters and number
           </span>
